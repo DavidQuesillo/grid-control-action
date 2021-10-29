@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - bad
+  - PlayerGrid
+  - EnemyGrid
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - Grid
   - 
   - 
   - 
