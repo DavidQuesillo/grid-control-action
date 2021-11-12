@@ -12,11 +12,17 @@ public class GridMovement : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rb;
     [SerializeField]
+    private Attributes playerHp = new Attributes(10);
+    [SerializeField]
+    private float hpAmount = 3f;
+    [SerializeField]
     private LayerMask gridLayer;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerHp.SetNewValue(hpAmount);
+
         /*spaces[0, 0] = spots.ToArray()[0];
         spaces[1, 0] = spots.ToArray()[1];
         spaces[2, 0] = spots.ToArray()[2];
@@ -104,6 +110,15 @@ public class GridMovement : MonoBehaviour
             return false;
         }
         return col.CompareTag("PlayerGrid");
+    }
+
+    public void DamagePlayer(float ouchNum)
+    {
+        playerHp.SubstractToAttrtibute(ouchNum);
+        if (playerHp.CurrentValue <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public LayerMask getLayer()

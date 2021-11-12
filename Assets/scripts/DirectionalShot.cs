@@ -22,5 +22,20 @@ public class DirectionalShot : MonoBehaviour
             GameObject shot = Instantiate(bullet, transform);
             shot.GetComponent<Rigidbody2D>().AddForce(Vector2.left * speed);
         }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            GameObject shot = Instantiate(bullet, transform);
+            shot.GetComponent<Rigidbody2D>().AddForce(Vector2.right * speed);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            GameObject shot = Instantiate(bullet, transform);
+            shot.GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            GameObject shot = Instantiate(bullet, transform);
+            shot.GetComponent<Rigidbody2D>().AddForce(Vector2.down * speed);
+        }
     }
 }

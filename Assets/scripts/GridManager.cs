@@ -8,17 +8,9 @@ public class GridManager : MonoBehaviour
     public static GridManager instance;
 
     [SerializeField]
-    private int playerSquares = 1;
-    [SerializeField]
-    private int enemySquares = 1;
-    [SerializeField]
     private Tile playerColor;
     [SerializeField]
     private Tile enemyColor;
-    [SerializeField]
-    private int playerWinAmount = 10;
-    [SerializeField]
-    private int playerLoseAmount = 2;
 
     [SerializeField]
     private Grid grid;
@@ -54,7 +46,9 @@ public class GridManager : MonoBehaviour
     }
     public void TakeSquareForEnemy(Vector3Int squareCoordinates)
     {
-        playerMap.SetTile(squareCoordinates, enemyColor);
+        playerMap.SetTile(squareCoordinates, null);
+        enemyMap.SetTile(squareCoordinates, enemyColor);
+        Debug.Log(squareCoordinates.ToString());
     }
 
     public Tilemap getEnemyTilemap()
